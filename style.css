@@ -1,0 +1,821 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); 
+
+*{
+    box-sizing: border-box;
+}
+
+html,body{
+    padding: 0px;
+    margin: 0px;
+    background-color: var(--background-color);
+    user-select: none;
+    font-family: 'poppins', sans-serif;
+}
+
+/* Root Variables */
+:root{
+    --primary-color: #0583D2;
+    --red: #E22030;
+    --semigold: #F2B995;
+    --seagreen: #00AEAC;
+    --gray: #707070;
+    --lightgray: #d6d6d6;
+    --background-color: #f1f1f1;
+    --white: #ffffff;
+    --black: #000000;
+    --shadow: 20px 20px 50px var(--lightgray);
+    --h5-size: 0.8rem;
+    --p-size: 0.7rem;
+
+}
+
+.dark-theme{
+    --shadow: 20px 20px 50px var(--lightgray);
+    --background-color: #181a1e;
+    --gray: #cccccc;
+    --lightgray: rgb(0, 0, 0, 0.4);
+    --white: #202528;
+    --black: #ffffff;
+}
+
+.active{
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 3px;
+}
+
+.align{
+    text-align: center;
+    padding-top: 2px;
+    height: 20px;
+    width: 30px;
+}
+
+/* Heading and Paragraph Sizes */
+h1, h2, h3, h4, h5{
+    color: var(--black);
+}
+
+h1{
+    font-size: 1.4rem;
+
+}
+
+h2{
+    font-size: 1.2rem;
+}
+
+h3{
+    font-size: 1rem;
+}
+
+h5{
+    font-size: 0.8rem;
+}
+
+p{
+    font-size: 0.7rem;
+    color: var(--gray);
+}
+
+small{
+    font-size: 0.7rem;
+    color: #707070;
+}
+
+/* Anchor Text Decoration Removal */
+a{
+    text-decoration: none;
+    color: var(--gray);
+}
+
+/* ================== Container Styling ================== */
+.container{
+    width: 97vw;
+    height: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: row nowrap;
+    justify-content: space-between;
+}
+
+/* ================== Sidebar Styling ================== */
+.leftsidebar{
+    width: 11%;
+    position: static;
+}
+
+aside{
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+}
+
+.top{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+.top a{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;    
+    align-items: center;    
+}
+
+.top a img{
+    width: 35px;
+    height: 35px;
+}
+
+.top a h2{
+    color: var(--primary-color);
+    margin-left: 10px;
+}
+
+.top a h2 span{
+    color: var(--black);
+}
+
+.close{
+    display: none;
+}
+
+.close span{
+    color: var(--black);
+}
+
+.navigation{
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+    height: 100%;
+}
+
+.navigation a{
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 30px;
+    height: 50px;
+    transition: 0.3s ease;
+}
+
+.navigation a p{
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.navigation a:last-child{
+    position: absolute;
+    bottom: 7%;
+}
+
+.navigation a span{
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+.navigation a:hover{
+    padding-left: 40px;
+}
+
+.navigation a.active {
+    background-color: var(--lightgray);
+    color: var(--primary-color) ;
+}
+
+.navigation a.active:before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 6px;
+    height: 100%;
+    background-color: var(--primary-color);
+}
+
+/* ================== Main Body Styling ================== */
+
+.content{
+    width: 87.5%;
+}
+
+.center{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.maincenter{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 69.5%;
+    height: 100%;
+}
+
+.container .heading{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.content .heading input[type="date"]{
+
+    display: inline-block;
+    border: 0;
+    border-radius: 3px;
+    padding-left: 20px;
+    height: 22px;
+    color: var(--gray);
+    background-color: var(--lightgray);
+    margin-bottom: 20px;
+}
+
+.maincenter .analytics{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.maincenter .analytics .total{
+    width: 32%;
+    height: 230px;
+    border-radius: 30px;
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    padding: 30px;
+    position: relative;
+
+    transition: box-shadow 0.4s ease;
+}
+
+.maincenter .analytics .total:hover{
+    box-shadow: none;
+}
+
+.maincenter .analytics .total .icon{
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    padding-top: 8px;
+    border-radius: 50%;
+    color: var(--white);
+}
+
+.maincenter .analytics .sales .icon{
+    background-color: var(--primary-color);
+}
+
+.maincenter .analytics .expense .icon{
+    background-color: var(--red);
+}
+
+.maincenter .analytics .income .icon{
+    background-color: var(--seagreen);
+}
+
+.maincenter .analytics .last{
+    position: absolute;
+    bottom: 15px;
+    
+}
+
+.middle{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: top;
+}
+
+.middle .left{
+    width: 91px;
+    height: 91px;
+    position: relative;
+}
+
+.middle .left svg{
+    background-color: transparent;
+    width: 91px;
+    height: 91px;
+}
+
+.middle .left svg circle{
+    fill: none;
+    stroke: var(--primary-color);
+    stroke-width: 13px;
+    stroke-linecap: round;
+}
+
+.sales .middle .left svg circle{
+    stroke-dasharray: 200;
+    stroke-dashoffset: 30;
+}
+
+.expense .middle .left svg circle{
+    stroke-dasharray: 200;
+    stroke-dashoffset: 60;   
+}
+
+.income .middle .left svg circle{
+    stroke-dasharray: 200;
+    stroke-dashoffset: 20;   
+}
+
+.middle .left h5{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-60%, -50%);
+    color: var(--gray);
+    margin: 0;
+}
+
+.middle .right h5{
+    margin-bottom: 0px;
+}
+
+.middle .right h2{
+    margin-top: 6px;
+}
+
+.recentorders {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.recentorders h3{
+    z-index: 1;
+}
+
+.recentorders .orders{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    height: 385px;
+    border-radius: 30px;
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    padding: 30px;
+    transition: box-shadow 0.3s ease;
+}
+
+.maincenter .recentorders #order:hover{
+    box-shadow: none;
+}
+
+.maincenter .recentorders table{
+    width: 100%;
+}
+
+.maincenter .recentorders thead th{
+    font-size: var(--h5-size);
+    color: var(--black);
+}
+
+.maincenter .recentorders tbody td{
+    font-size: var(--h5-size);
+    text-align: center;
+    height: 30px;
+    color: var(--gray);
+    font-weight: 500;
+    border-bottom: 1px solid var(--lightgray);
+}
+
+.recentorders p{
+    z-index: 1;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* ================== Right Sidebar Styling ================== */
+.rightsidebar{
+    width: 29%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    
+}
+
+.rightbartop{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.rightbartop .admintools{
+    padding: 20px;
+    padding-right: 30px;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.admintools .toggler{
+    display: flex;
+    flex-flow: row nowrap;
+    width: fit-content;
+    align-items: center;
+    justify-self: center;
+}
+
+.rightbartop .admintools input[type='checkbox'], .rightbartop .admintools>span{
+    visibility: hidden;
+    color: var(--black);
+}
+
+.rightbartop .admintools label{
+    width: 60px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--lightgray);
+    border-radius: 3px;
+    color: var(--gray);
+
+    position: relative;
+}
+
+.rightbartop .admintools label span{
+    font-size: 15px;
+}
+
+.rightbartop .admin{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.rightbartop .admin .admininfo{
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: right;
+   
+}
+
+.admininfo .heyadmin{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.admininfo .heyadmin p, .admininfo .heyadmin h5, .admininfo p{
+    display: inline-block;
+    margin:0px;
+}
+
+.rightbartop .admin img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.recentupdates, .updates, .salesanalytics{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+
+    margin-bottom: 10px;
+}
+
+.updates{
+    align-items: flex-start;
+    padding: 30px;
+    background-color: var(--white);
+    border-radius: 30px;
+    box-shadow: var(--shadow);
+
+    transition: box-shadow 0.3s ease;
+}
+
+.updates:hover{
+    box-shadow: none;
+}
+
+.update{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 30px;
+}
+
+.update:last-child{
+    margin: 0px;
+}
+
+.update h5, .update p{
+    display: inline-block;
+    font-weight: 550;
+    margin: 0px;
+}
+
+.update small{
+    display: block;
+}
+
+.update img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.orders, .orderscontent div{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    width: 100%;
+}
+
+.orderscontent div{
+    justify-content: space-between;
+}
+
+.orders, .orderscontent div, .orderscontent{
+    width: 100%;
+}
+
+.orders{
+    gap: 20px;
+    height: 79.78px;
+    background-color: var(--white);
+    margin-bottom: 10px;
+    padding: 0px 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+
+    transition: 0.3s ease;
+}
+
+.orders:hover{
+    box-shadow: none;
+}
+
+.orderscontent div h5{
+    margin-bottom: 0px;
+}
+
+.ordersicon{
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    text-align: center;
+    padding-top: 8px;
+    border-radius: 50%;
+    color: var(--white);
+}
+
+.online .ordersicon{
+    background-color: var(--primary-color);
+}
+
+.offline .ordersicon{
+    background-color: var(--red);
+}
+
+.newcustomer .ordersicon{
+    background-color: var(--seagreen);
+}
+
+.addproduct{
+    width: 100%;
+    height: 79.78px;
+    border-radius: 20px;
+    border: 2px dashed var(--primary-color);
+    box-shadow: var(--shadow);
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.addproduct:hover, .addproduct:hover p{
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    box-shadow: none;
+}
+
+.addproduct, .addproduct p{
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.recentupdates h3, .salesanalytics h3{
+    margin-top: 0px;
+}
+
+/* Media Queries for small laptops */
+@media screen and (max-width: 1200px) {
+
+    .leftsidebar .top{
+        padding-top: 10px;
+        padding-left: 10px;
+    }
+
+    .container{
+        height: auto;
+    }
+
+    .leftsidebar{
+        width: 10%;
+        position: static;
+    }
+
+    aside .top .logo h2, .navigation a p{
+        display: none;
+    }
+    .maincenter{
+        flex-shrink: 3;
+    }
+
+    .maincenter .analytics {
+        flex-flow: column nowrap;
+        margin-bottom: 0px;
+    }
+
+    .maincenter .analytics .total{
+        width: 100%;
+        height: 230px;
+        margin-bottom: 20px;
+    }
+
+    .maincenter .analytics .total:last-child{
+        margin-bottom: 0px;
+    }
+
+    .recentupdates{
+        margin-bottom: 10px;
+    }
+
+    .updates, .salesanalytics .orders{
+        padding: 20px;
+    }
+
+    .updates .update{
+        margin-bottom: 10px;
+    }
+
+    .recentorders {
+        width: 85vw;
+    }
+
+    .salesanalytics .orders, .salesanalytics .addproduct{
+        height: 78px;
+    }
+
+    .navigation a:last-child {
+        position: static;
+    }
+
+    .maincenter .recentorders thead th:last-child, 
+    .maincenter .recentorders tbody td:last-child{
+        display: none;
+    }
+
+}
+
+/* Media Queries for large tabtets */
+@media screen and (max-width:1024px) {
+
+    .leftsidebar{
+        width: 10%;
+    }
+
+    .content{
+        width: 89%;
+    }
+
+    .content .center .maincenter{
+        width: 59%;
+    }
+
+    .content .center .rightsidebar{
+        width: 39%;
+    }
+
+    
+}
+
+@media screen and (max-width:750px){
+
+    .leftsidebar{
+        width: 14%;
+        overflow-y: auto;
+        position: relative;
+        left: 0px;
+
+    }
+
+    .content{
+        width: 80%;
+    }
+
+    .center{
+        flex-flow: column nowrap;
+    }
+
+    .content .center .maincenter{
+        width: 100%;
+    }
+
+    .recentorders{
+        width: 100%;
+    }
+
+    .content .center .rightsidebar{
+        width: 100%;
+    }
+} 
+
+/* Media Queries for mobiles */
+@media screen and (max-width: 550px){
+    .leftsidebar{
+        z-index: 10;
+        position: fixed;
+        left: 0px;
+        background-color: var(--white);
+        width: 0px;
+        height: 100vh;
+        box-shadow: 0px 20px 20px var(--lightgray);
+        overflow-y: auto;
+    }
+
+    .show{
+        animation: movein 0.3s ease forwards;
+    }
+
+    @keyframes movein {
+        0%{
+            width: 0px;
+        }
+
+        100%{
+            width: 220px;
+        }
+    }
+
+    .leftsidebar .top{
+        padding: 0px 10px ;
+    }
+
+    .navigation a p{
+        display: block;
+    }
+
+    aside .top .logo h2, .navigation a h5, .close{
+        display: inline-block;
+    }
+
+    .content{
+        position: static;
+        margin-top: 80px;
+        width: 100%;
+        padding: 0px 3%;
+    }
+
+    .heading .rightbartop{
+        position: fixed;
+        top:-15px;
+        left: 0px;
+        padding: 10px;
+        width: 100%;
+        z-index: 5;
+        background-color: var(--white);
+        box-shadow: 0px 0px 10px var(--lightgray);
+    }
+
+    .heading .rightbartop .admintools > span{
+        visibility: visible;
+    }
+
+    .maincenter .recentorders .orders{
+        padding: 20px;
+    }
+
+    .maincenter .recentorders tbody td:nth-child(4){
+        display: none;
+    }
+}
